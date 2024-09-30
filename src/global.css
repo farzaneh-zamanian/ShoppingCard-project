@@ -5,9 +5,9 @@
 
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
-  /* --color-primary:
-  --color-secondary:
-  --color-accent: */
+  --color-primary:#FFFFFF;
+  --color-secondary:#FFA07A;
+  --color-accent:#FFC67D;
   --color-background: #f9fafc;
 }
 
@@ -36,7 +36,6 @@ body {
   max-width: 120rem;
   position: relative;
   min-height: 100vh;
-  background-color: var(--color-background);
 }
 /* main {
   flex: 1;
