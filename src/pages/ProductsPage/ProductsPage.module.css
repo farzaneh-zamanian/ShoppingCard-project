@@ -8,8 +8,9 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      border: 1px solid #303030;
 }
-
+li{
+      cursor: pointer;
+}
 /* .sideBarContainer {
 } */

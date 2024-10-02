@@ -1,21 +1,71 @@
-import styles from "./ProductsPage.module.css";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../../context/ProductContext";
+import styles from "./ProductsPage.module.css";
 import Card from "../../components/Card/Card";
 import Loading from "../../components/Loading/Loading";
+// import Input from "../../components/SearchBox/Input";
+import {
+  filterProducts,
+  initialQuery,
+  searchProducts,
+} from "../../helpers/helper";
+import SearchBox from "../../components/SearchBox/SearchBox";
+import SideBar from "../../components/SideBar/SideBar";
+
 function ProductsPage() {
-  const { products } = useProducts();
+  // STATES
+  const { products } = useProducts(); //all products state
+  const [displayedProducts, setDisplayedProducts] = useState([]); //displayed products state
+  const [searchValue, setSearchValue] = useState(""); //search state
+  const [query, setQuery] = useState({}); //search and category or one of them state
+
+  const [searchParams, setSearchParams] = useSearchParams(); //query string
+
+  // USEEFFECT
+  useEffect(() => {
+    setDisplayedProducts(products);
+    // after reRendering page the query stay in url
+    setQuery(initialQuery(searchParams));
+  }, [products]);
+
+  useEffect(() => {
+    setSearchParams(query);
+    // ********   solve the error of input when delete the input
+    setSearchValue(query.search || "");
+    // ********   solve the error of input
+
+    let resultSearchedProducts = searchProducts(products, query.search);
+    resultSearchedProducts = filterProducts(
+      resultSearchedProducts,
+      query.category
+    );
+    setDisplayedProducts(resultSearchedProducts);
+  }, [query]);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.productsContainer}>
-        {!products.length && <Loading/>}
-        {products.map((product) => (
-          <Card key={product.id} product={product} />
-        ))}
-      </div>
+    <>
+      {/* SEARCH BOX */}
+      <SearchBox
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        setQuery={setQuery}
+      />
 
-      <div className={styles.sideBarContainer}>Sidebar</div>
-    </div>
+      {/* MAIN */}
+      <main className={styles.container}>
+        {/* PRODUCTS LIST SECTION*/}
+        <section className={styles.productsContainer}>
+          {!displayedProducts.length && <Loading />}
+          {displayedProducts.map((product) => (
+            <Card key={product.id} product={product} />
+          ))}
+        </section>
+
+        {/* CATEGORY SECTION */}
+        <SideBar setQuery={setQuery} />
+      </main>
+    </>
   );
 }
 

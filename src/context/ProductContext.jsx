@@ -4,7 +4,11 @@ import api from "../services/config";
 const ProductContext = createContext();
 
 function ProductProvider({ children }) {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);  
+
+
+
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -17,6 +21,12 @@ function ProductProvider({ children }) {
     };
     fetchProducts();
   }, []);
+
+
+
+
+
+
   return (
     <ProductContext.Provider value={{ products }}>
       {children}
