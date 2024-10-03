@@ -15,16 +15,13 @@ function SearchBox({ searchValue, setSearchValue, setQuery }) {
     setQuery((query) => createQueryObject(query, { search: searchValue }));
   }, [searchValue, setQuery]);
   return (
-    <section>
-      <div className={styles.container}>
-        <input
-          type="text"
-          value={searchValue}
-          placeholder="Search Product Tiltle"
-          onChange={searchHandler}
-        />
-      </div>
-
+    <section className={styles.searchBoxContainer}>
+      <input
+        type="text"
+        value={searchValue}
+        placeholder="Search Product Tiltle"
+        onChange={searchHandler}
+      />
     </section>
   );
 }

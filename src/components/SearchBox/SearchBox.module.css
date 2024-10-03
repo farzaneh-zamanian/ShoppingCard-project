@@ -1,0 +1,17 @@
+.searchBoxContainer {
+  padding: 3rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-secondary);
+  margin: 1rem auto;
+}
+.searchBoxContainer input {
+  border: 2px solid var(--color-secondary);
+  width: 30%;
+  padding: 1.5rem;
+  font-size: 1.3rem;
+  z-index: 2;
+  border-radius: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif3;
+}

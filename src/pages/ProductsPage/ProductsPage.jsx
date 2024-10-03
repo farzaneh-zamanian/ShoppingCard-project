@@ -63,7 +63,7 @@ function ProductsPage() {
         </section>
 
         {/* CATEGORY SECTION */}
-        <SideBar setQuery={setQuery} />
+        <SideBar query={query} setQuery={setQuery} />
       </main>
     </>
   );
