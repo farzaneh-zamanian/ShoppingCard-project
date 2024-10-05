@@ -4,9 +4,17 @@ import { Link } from "react-router-dom";
 import { TbListDetails } from "react-icons/tb";
 import { TbShoppingBagCheck } from "react-icons/tb";
 import { shortenText } from "../../helpers/helper";
+import useCartContext from "../../hook/useCartContext";
+import { addProductActionCreator } from "../../actions/cartProducts";
 
 function Card({ product }) {
   const { id, title, image, price } = product;
+  const { state, dispatch } = useCartContext();
+
+  const cartHandler = () => {
+    // dispatch({ type: "ADD_PRODUCT", payload: product });
+    dispatch(addProductActionCreator(product));
+  };
   return (
     <div className={styles.cardContainer}>
       <img src={image} alt={title} />
@@ -17,7 +25,7 @@ function Card({ product }) {
           <TbListDetails />
         </Link>
         <div>
-          <button>
+          <button onClick={cartHandler}>
             <TbShoppingBagCheck />
           </button>
         </div>

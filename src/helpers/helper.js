@@ -46,10 +46,20 @@ const initialQuery = (searchParams) => {
       return query;
 }
 
+//THE TOTOAL PRICE OF SELECTED PRODUCTS
+const sumProductsItems = (products) => {
+      const productsQuantity = products.reduce((total, product) => total + product.productQuantity, 0)
+      const totalPrice = products.reduce((total, product) => total + product.price * product.productQuantity, 0).toFixed(2)
+
+      return { productsQuantity: productsQuantity, totalPrice: totalPrice }
+
+}
+
 export {
       shortenText,
       searchProducts,
       filterProducts,
       createQueryObject,
-      initialQuery
+      initialQuery,
+      sumProductsItems
 }

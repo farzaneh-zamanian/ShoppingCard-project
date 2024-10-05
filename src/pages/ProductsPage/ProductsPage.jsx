@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useProducts } from "../../context/ProductContext";
 import styles from "./ProductsPage.module.css";
 import Card from "../../components/Card/Card";
 import Loading from "../../components/Loading/Loading";
@@ -12,10 +11,12 @@ import {
 } from "../../helpers/helper";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import SideBar from "../../components/SideBar/SideBar";
+import useProductsContext from "../../hook/useProductsContext";
 
 function ProductsPage() {
   // STATES
-  const { products } = useProducts(); //all products state
+  const { products } = useProductsContext(); //all products state
+  
   const [displayedProducts, setDisplayedProducts] = useState([]); //displayed products state
   const [searchValue, setSearchValue] = useState(""); //search state
   const [query, setQuery] = useState({}); //search and category or one of them state
