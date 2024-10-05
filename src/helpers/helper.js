@@ -54,6 +54,18 @@ const sumProductsItems = (products) => {
       return { productsQuantity: productsQuantity, totalPrice: totalPrice }
 
 }
+//FIND PRODUCT QUANTITY 
+const productItemQuantity = (state, id) => {
+      const index = state.cartProductsData.findIndex(product => product.id === id)
+      if (index === -1) return 0;
+      else {
+            return state.cartProductsData[index].productQuantity;
+
+      }
+
+
+
+}
 
 export {
       shortenText,
@@ -61,5 +73,6 @@ export {
       filterProducts,
       createQueryObject,
       initialQuery,
-      sumProductsItems
+      sumProductsItems,
+      productItemQuantity
 }
