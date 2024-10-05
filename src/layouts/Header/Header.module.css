@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-secondary);
+
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.header a {
+  font-size: 1.6rem;
+  font-weight:600;
+  color: #fff;
+}
+.header .shoppingCardIcon{
+  font-size: 1.8rem;
+  background-color: var(--color-primary);
+  text-align: center;
+  color: var(--color-secondary);
+  height: 3.5rem;
+  width: 3.5rem;
+  line-height: 3.5rem;
+  border-radius: 9px;
+  padding: 2px;
+  position: relative;
+
+}
+.header span {
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  background-color: #303030;
+  color: var(--color-primary);
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}

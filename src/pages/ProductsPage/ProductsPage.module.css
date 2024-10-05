@@ -2,7 +2,9 @@
       display:flex ;
       justify-content: space-between;
       gap: 3rem;
-      border: 1px solid red;
+      /* border: 1px solid red; */
+      margin-bottom: 5rem;
+
 }
 .productsContainer {
       width: 100%;
