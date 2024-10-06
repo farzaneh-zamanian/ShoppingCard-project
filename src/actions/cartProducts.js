@@ -16,3 +16,7 @@ export const decreaseProductActionCreator = (payload = undefined) => ({
       type: "DECREASE_EXIST_PRODUCT",
       payload,
 });
+export const checkOutActionCreator = (payload = undefined) => ({
+      type: "CHECKOUT",
+      payload,
+});

@@ -1,0 +1,30 @@
+.basketSideBar {
+  border: 2px solid #e2e2e2;
+  padding: 2rem;
+  border-radius: 2rem;
+  width: 30rem;
+  margin-right: 3rem;
+}
+.basketSideBar div {
+  display: flex;
+  align-items: center;
+  color: var(--color-secondary);
+  margin-bottom: 1.5rem;
+}
+.basketSideBar div svg {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+.basketSideBar div span {
+  color: grey;
+  margin-left: 1rem;
+}
+.basketSideBar button {
+  width: 80%;
+  margin: 2rem;
+  background-color: var(--color-secondary);
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+}

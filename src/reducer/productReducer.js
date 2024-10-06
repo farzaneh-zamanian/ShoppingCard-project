@@ -1,4 +1,4 @@
-import { addProductActionCreator, decreaseProductActionCreator, deleteProductActionCreator, increaseProductActionCreator } from "../actions/cartProducts";
+import { addProductActionCreator, checkOutActionCreator, decreaseProductActionCreator, deleteProductActionCreator, increaseProductActionCreator } from "../actions/cartProducts";
 import { sumProductsItems } from "../helpers/helper";
 
 const productReducer = (state, action) => {
@@ -63,7 +63,7 @@ const productReducer = (state, action) => {
       };
     }
 
-    case "CHECKOUT":
+    case checkOutActionCreator().type:
       return {
         cartProductsData: [],
         totalPrice: 0,
