@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
 
 function Header({ state }) {
@@ -9,6 +9,13 @@ function Header({ state }) {
       <Link to="/products">
         <h1>OnlineShop</h1>
       </Link>
+      <nav className={styles.navbar}>
+        <ul>
+          <li>
+            <NavLink to="products">Products</NavLink>
+          </li>
+        </ul>
+      </nav>
       <Link to="/checkout">
         <div className={styles.shoppingCardIcon}>
           <PiShoppingCartSimpleBold />

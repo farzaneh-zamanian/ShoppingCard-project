@@ -5,14 +5,14 @@
   background-color: var(--color-secondary);
 
   padding: 1.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius:0.5rem;
 }
 .header a {
   font-size: 1.6rem;
-  font-weight:600;
+  font-weight: 600;
   color: #fff;
 }
-.header .shoppingCardIcon{
+.header .shoppingCardIcon {
   font-size: 1.8rem;
   background-color: var(--color-primary);
   text-align: center;
@@ -23,7 +23,6 @@
   border-radius: 9px;
   padding: 2px;
   position: relative;
-
 }
 .header span {
   font-size: 1rem;
@@ -36,4 +35,16 @@
   position: absolute;
   top: -10px;
   right: -10px;
+}
+.navbar ul li{
+  list-style: none;
+}
+.navbar li a {
+  color: #fff;
+  font-size: 1.4rem;
+  transition: all 0.5s ease;
+}
+.navbar li a:hover {
+  color: var(--color-accent);
+  border-bottom: 1px solid #fff;
 }

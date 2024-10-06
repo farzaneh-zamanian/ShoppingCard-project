@@ -1,11 +1,11 @@
 .searchBoxContainer {
   padding: 3rem;
-  border-radius: 0.5rem;
-  border: 2px solid var(--color-secondary);
+  border-radius:0.5rem;
+  border: 2px solid #e2e2e2;
   margin: 1rem auto;
 }
 .searchBoxContainer input {
-  border: 2px solid var(--color-secondary);
+  border: 2px solid #e2e2e2;
   width: 30%;
   padding: 1.5rem;
   font-size: 1.3rem;

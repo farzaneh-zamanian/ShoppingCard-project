@@ -32,7 +32,8 @@ function Card({ product }) {
       <h3>{shortenText(title)}</h3>
       <p>{price} $</p>
       <div className={styles.actionsContainer}>
-        <Link to={`product/${id}`}>
+        <Link to={`/products/${id}`}>
+        
           <TbListDetails />
         </Link>
         <div>
