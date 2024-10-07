@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./HomePage.module.css";
 import { NavLink } from "react-router-dom";
+import { useTitle } from "../../hook/useTitle";
 
 function HomePage() {
+  useTitle("Home page")
+
   return (
     <main>
       {/* Hero Section */}

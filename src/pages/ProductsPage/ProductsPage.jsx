@@ -12,11 +12,14 @@ import {
 import SearchBox from "../../components/SearchBox/SearchBox";
 import SideBar from "../../components/SideBar/SideBar";
 import useProductsContext from "../../hook/useProductsContext";
+import { useTitle } from "../../hook/useTitle";
 
 function ProductsPage() {
+  useTitle("Product page")
+
   // STATES
   const { products } = useProductsContext(); //all products state
-  
+
   const [displayedProducts, setDisplayedProducts] = useState([]); //displayed products state
   const [searchValue, setSearchValue] = useState(""); //search state
   const [query, setQuery] = useState({}); //search and category or one of them state
